@@ -1,0 +1,14 @@
+{
+    "name": "michelestevany/dog-cards-php",
+    "description": "Dog cards PHP project with database connection",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Michele Stevany Venda Dati",
+            "email": "micheledatii@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
