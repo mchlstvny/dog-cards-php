@@ -92,7 +92,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
     <div class="mt-6 text-center">
-      <a href="index.php" class="text-amber-700 hover:underline">Back to Dog List</a>
+      <a href="index.php" class="block mt-6 text-center text-amber-700 font-semibold hover:text-yellow-800 transition">
+        Back to Dog List</a>
     </div>
   </div>
 

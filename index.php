@@ -25,7 +25,6 @@ try {
     <a href="upload.php" 
        class="flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-amber-600 to-yellow-700 text-white font-semibold rounded-full shadow-lg hover:scale-105 transform transition">
        <i data-feather="plus" class="w-5 h-5"></i>
-       Add Dog
     </a>
   </div>
 
@@ -53,7 +52,7 @@ try {
                Edit
             </a>
             <a href="delete.php?id=<?php echo $dog['id']; ?>" 
-               onclick="return confirm('Are you sure?')" 
+               onclick="openModal(this.href); return false;" 
                class="px-4 py-1 bg-red-200 hover:bg-red-300 text-red-800 font-semibold rounded-lg shadow transition">
                Delete
             </a>
@@ -65,8 +64,47 @@ try {
     <?php endif; ?>
   </div>
 
+  <!-- Delete Confirmation Modal -->
+  <div id="confirmModal" class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+    <div class="bg-white rounded-2xl shadow-xl p-8 max-w-sm w-full text-center transform scale-95 opacity-0 transition-all duration-300" id="modalContent">
+      <h2 class="text-xl font-bold text-amber-800 mb-4">Are you sure?</h2>
+      <p class="text-gray-600 mb-6">This action cannot be undone. Do you really want to delete this dog?</p>
+      <div class="flex justify-center gap-4">
+        <button onclick="closeModal()" 
+                class="px-5 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold">
+          Cancel
+        </button>
+        <a id="confirmDeleteBtn" href="#" 
+           class="px-5 py-2 rounded-lg bg-red-500 hover:bg-red-600 text-white font-semibold shadow">
+          Yes, Delete
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script>
-    feather.replace()
+    function openModal(deleteUrl) {
+      document.getElementById("confirmDeleteBtn").setAttribute("href", deleteUrl);
+      const modal = document.getElementById("confirmModal");
+      const content = document.getElementById("modalContent");
+      modal.classList.remove("hidden");
+      setTimeout(() => {
+        content.classList.remove("scale-95", "opacity-0");
+        content.classList.add("scale-100", "opacity-100");
+      }, 10);
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("confirmModal");
+      const content = document.getElementById("modalContent");
+      content.classList.remove("scale-100", "opacity-100");
+      content.classList.add("scale-95", "opacity-0");
+      setTimeout(() => {
+        modal.classList.add("hidden");
+      }, 200);
+    }
+
+    feather.replace();
   </script>
 </body>
 </html>

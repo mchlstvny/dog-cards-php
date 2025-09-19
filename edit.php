@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <a href="index.php" 
             class="block mt-6 text-center text-amber-700 font-semibold hover:text-yellow-800 transition">
-            Back to Home
+            Back to Dog List
         </a>
     </div>
 </body>
