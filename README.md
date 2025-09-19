@@ -9,34 +9,37 @@ This project uses **Composer** for dependency management and **dotenv** for envi
 - Manage dog data (name, age, breed, color, weight, image).
 - Store data in a MySQL database.
 - Use `.env` file for configuration (DB credentials, app settings), the format is in `.env.example`
-
 - Organized using Composer.
 
 ---
 
 ## 📂 Project Structure
+```
 dog-cards-php/
-├── src/ # Source code
-├── vendor/ # Composer dependencies
-├── .env # Environment variables (ignored by Git)
-├── .env.example # Example env file (shared in repo)
-├── composer.json # Composer configuration
-├── composer.lock # Composer lock file
-└── README.md # Project documentation
+├── src/                # Source code
+├── vendor/             # Composer dependencies
+├── .env                # Environment variables (ignored by Git)
+├── .env.example        # Example env file (shared in repo)
+├── composer.json       # Composer configuration
+├── composer.lock       # Composer lock file
+└── README.md           # Project documentation
+```
 
 ---
 
 ## ⚙️ Installation
 
 1. **Clone the repository**
+   ```
    git clone https://github.com/michelestevany/dog-cards-php.git
    cd dog-cards-php
-
+   ```
 2. **Install dependencies**
-composer install
-
-3. **Set up your environment file**
-Copy .env.example to .env:
+   ```
+   composer install
+   ```
+4. **Set up your environment file**
+Copy `.env.example` to `.env:`
 
 ---
 
